@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 import {showSuccessMsg, showErrMsg} from '../../utils/notification/Notification'
@@ -7,7 +7,7 @@ import {showSuccessMsg, showErrMsg} from '../../utils/notification/Notification'
 
 function EditUser() {
     const {id} = useParams()
-    const history = useHistory()
+    const history = useNavigate()
     const [editUser, setEditUser] = useState([])
 
     const users = useSelector(state => state.users)

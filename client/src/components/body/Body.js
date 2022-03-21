@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes ,Route } from 'react-router-dom'
+import { Routes ,Route, Router } from 'react-router-dom'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
@@ -20,21 +20,22 @@ function Body() {
     const {isLogged, isAdmin} = auth
     return (
         <section>
-            <Switch>
-                <Route path="/" component={Home} exact />
+            <Router>
+                <routes>
+                    <Route path="/" component={Home} exact />
 
-                <Route path="/login" component={isLogged ? NotFound : Login} exact />
-                <Route path="/register" component={isLogged ? NotFound : Register} exact />
+                    <Route path="/login" component={isLogged ? NotFound : Login} exact />
+                    <Route path="/register" component={isLogged ? NotFound : Register} exact />
 
-                <Route path="/forgot_password" component={isLogged ? NotFound : ForgotPass} exact />
-                <Route path="/user/reset/:token" component={isLogged ? NotFound : ResetPass} exact />
+                    <Route path="/forgot_password" component={isLogged ? NotFound : ForgotPass} exact />
+                    <Route path="/user/reset/:token" component={isLogged ? NotFound : ResetPass} exact />
 
-                <Route path="/user/activate/:activation_token" component={ActivationEmail} exact />
+                    <Route path="/user/activate/:activation_token" component={ActivationEmail} exact />
 
-                <Route path="/profile" component={isLogged ? Profile : NotFound} exact />
-                <Route path="/edit_user/:id" component={isAdmin ? EditUser : NotFound} exact />
-
-            </Switch>
+                    <Route path="/profile" component={isLogged ? Profile : NotFound} exact />
+                    <Route path="/edit_user/:id" component={isAdmin ? EditUser : NotFound} exact />
+                </routes>
+            </Router>
         </section>
     )
 }

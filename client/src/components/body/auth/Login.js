@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import {dispatchLogin} from '../../../redux/actions/authAction'
@@ -18,7 +18,7 @@ const initialState = {
 function Login() {
     const [user, setUser] = useState(initialState)
     const dispatch = useDispatch()
-    const history = useHistory()
+    const history = useNavigate()
 
     const {email, password, err, success} = user
 
