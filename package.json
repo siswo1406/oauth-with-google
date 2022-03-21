@@ -30,7 +30,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.7",
     "node-fetch": "^3.2.3",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

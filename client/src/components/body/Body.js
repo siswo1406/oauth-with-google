@@ -20,8 +20,7 @@ function Body() {
     const {isLogged, isAdmin} = auth
     return (
         <section>
-            <Router>
-                <routes>
+            <Routes>
                     <Route path="/" component={Home} exact />
 
                     <Route path="/login" component={isLogged ? NotFound : Login} exact />
@@ -34,8 +33,7 @@ function Body() {
 
                     <Route path="/profile" component={isLogged ? Profile : NotFound} exact />
                     <Route path="/edit_user/:id" component={isAdmin ? EditUser : NotFound} exact />
-                </routes>
-            </Router>
+            </Routes>
         </section>
     )
 }
